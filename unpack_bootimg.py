@@ -473,10 +473,10 @@ def unpack_vendor_boot_image(args):
 
     if info.header_version > 3:
         vendor_ramdisk_by_name_dir = os.path.join(
-            args.out, 'ramdisk', 'by-name')
+            args.out, 'vendor-ramdisk-by-name')
         create_out_dir(vendor_ramdisk_by_name_dir)
         for src, dst in vendor_ramdisk_symlinks:
-            src_pathname = os.path.join('..', '..', src)
+            src_pathname = os.path.join('..', src)
             dst_pathname = os.path.join(
                 vendor_ramdisk_by_name_dir, f'ramdisk_{dst}')
             if os.path.lexists(dst_pathname):
